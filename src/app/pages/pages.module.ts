@@ -4,6 +4,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesnotfoundComponent } from './pagesnotfound/pagesnotfound.component';
 import { GraficasComponent } from './graficas/graficas.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { FormsModule } from '@angular/forms';
+import { BarraProgresoComponent } from './components/barra-progreso/barra-progreso.component';
+import { CambioValorComponent } from './components/cambio-valor/cambio-valor.component';
 
 
 
@@ -13,9 +16,12 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     PagesnotfoundComponent,
     DashboardComponent,
     ProgressBarComponent,
+    BarraProgresoComponent,
+    CambioValorComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class PagesModule { }
