@@ -8,9 +8,14 @@ import { Component, Input } from '@angular/core';
 export class BarraProgresoComponent {
 
 @Input() progreso: number = 10;
+@Input() colorBarra: string = 'btn-info'
 
   get getPorcentaje(){
     return `${this.progreso}%`
+  }
+
+  get claseColor(){
+    return `progress-bar ${this.colorBarra} progress-bar-striped active`
   }
 
 }

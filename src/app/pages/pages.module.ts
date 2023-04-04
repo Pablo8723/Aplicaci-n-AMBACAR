@@ -7,6 +7,7 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { FormsModule } from '@angular/forms';
 import { BarraProgresoComponent } from './components/barra-progreso/barra-progreso.component';
 import { CambioValorComponent } from './components/cambio-valor/cambio-valor.component';
+import { AccountSettingComponent } from './account-setting/account-setting.component';
 
 
 
@@ -18,6 +19,7 @@ import { CambioValorComponent } from './components/cambio-valor/cambio-valor.com
     ProgressBarComponent,
     BarraProgresoComponent,
     CambioValorComponent,
+    AccountSettingComponent,
   ],
   imports: [
     CommonModule,
