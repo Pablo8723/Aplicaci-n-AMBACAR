@@ -7,6 +7,8 @@ import { GraficasComponent } from "./graficas/graficas.component";
 import { PagesComponent } from "./pages.component";
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { AccountSettingComponent } from "./account-setting/account-setting.component";
+import { PromesasComponent } from "./promesas/promesas.component";
+import { RxjsComponent } from "./rxjs/rxjs.component";
 
 const routes: Routes =[
     { 
@@ -17,6 +19,8 @@ const routes: Routes =[
             { path:'dashboard', component: DashboardComponent },
             { path:'graficas', component: GraficasComponent },
             { path:'progresbar', component: ProgressBarComponent },
+            { path:'promesas', component: PromesasComponent },
+            { path:'rxjs', component: RxjsComponent },
         ]
     },
 ];

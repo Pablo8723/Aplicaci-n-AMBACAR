@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { BarraProgresoComponent } from './components/barra-progreso/barra-progreso.component';
 import { CambioValorComponent } from './components/cambio-valor/cambio-valor.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -20,6 +22,8 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
     BarraProgresoComponent,
     CambioValorComponent,
     AccountSettingComponent,
+    PromesasComponent,
+    RxjsComponent,
   ],
   imports: [
     CommonModule,
