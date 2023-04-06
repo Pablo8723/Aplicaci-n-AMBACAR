@@ -15,12 +15,13 @@ const routes: Routes =[
         path:'ambacar', 
         component:PagesComponent,
         children:[
-            { path:'account', component: AccountSettingComponent },
-            { path:'dashboard', component: DashboardComponent },
-            { path:'graficas', component: GraficasComponent },
-            { path:'progresbar', component: ProgressBarComponent },
-            { path:'promesas', component: PromesasComponent },
-            { path:'rxjs', component: RxjsComponent },
+            { path:'account', component: AccountSettingComponent, data: { titulo: 'Configuración', modulo:'Usuario' } },
+
+            { path:'dashboard', component: DashboardComponent, data: { titulo: 'DashBoard', modulo:'ambacar' } },
+            { path:'graficas', component: GraficasComponent, data: { titulo: 'Graficas', modulo:'ambacar' } },
+            { path:'progresbar', component: ProgressBarComponent, data: { titulo: 'Barra de Progreso', modulo:'ambacar' } },
+            { path:'promesas', component: PromesasComponent, data: { titulo: 'Promesas', modulo:'ambacar' } },
+            { path:'rxjs', component: RxjsComponent, data: { titulo: 'RxJs', modulo:'ambacar' } },
         ]
     },
 ];
