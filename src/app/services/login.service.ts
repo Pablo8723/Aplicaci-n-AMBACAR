@@ -35,8 +35,7 @@ export class LoginService {
       headers:{
             'Content-Type': 'application/json'
           }
-    });
-    
+    });    
   }
 
   recuperarMenu(login: Login):Observable<Menu>{

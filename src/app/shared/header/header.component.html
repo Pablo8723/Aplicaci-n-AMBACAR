@@ -57,8 +57,13 @@
                                 <div class="dw-user-box">
                                     <div class="u-img"><img src="../assets/images/users/1.jpg" alt="user"></div>
                                     <div class="u-text">
-                                        <h4>Steave Jobs</h4>
-                                        <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                        <h4>{{nombre | titlecase | slice:0:17}}{{nombre.length > 17 ? '...' : ''}}</h4>
+                                        <p class="text-muted">{{usuario | lowercase}}</p>
+                                        <a href="pages-profile.html" 
+                                            class="btn btn-rounded btn-danger btn-sm">
+                                            View Profile
+                                        </a>
+                                    </div>
                                 </div>
                             </li>
                             <li role="separator" class="divider"></li>

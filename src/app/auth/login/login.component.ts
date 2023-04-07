@@ -58,10 +58,10 @@ export class LoginComponent implements OnInit {
         .pipe(
           switchMap( login => this.loginService.recuperarMenu(login))
         )
-        .subscribe( (resp) => {
-          sessionStorage.setItem('menu', JSON.stringify(resp.data)); 
+        .subscribe( (menu) => {
+          sessionStorage.setItem('menu', JSON.stringify(menu.data)); 
           this.cargando = false;
-          console.log(resp);
+          console.log(menu);
           
           if(this.loginForm.get('recuerdame')?.value){
             localStorage.setItem('recuerdame','true');

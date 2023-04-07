@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { LoginService } from 'src/app/services/login.service';
 import { SiderbarService } from 'src/app/services/siderbar.service';
@@ -17,7 +16,6 @@ export class SidebarComponent implements OnInit {
   nombreUsuario: string = "";
 
   constructor( private siderbarServices: SiderbarService,
-                private router: Router,
                 private loginService: LoginService ) { 
     this.menuItems = siderbarServices.cargarMenu();
   }
