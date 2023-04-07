@@ -1,0 +1,48 @@
+<!-- ACTIVACIÓN DE SNIPER -->
+<div *ngIf="cargando">
+    <app-cargando></app-cargando>
+</div>
+
+<div class="row animated fadeIn fast" *ngIf="!cargando">
+    <div class="col-12">
+
+        <div class="col">
+            <button mat-raised-button color="accent" (click)="nuevo()"> Crear nuevo Usuario</button>
+        </div>
+
+        <br>
+
+        <mat-card>
+            <mat-card-header>
+                <div class="table-responsive text-center">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th class="w400">Departamento</th>
+                                <th class="w120">Célular</th>
+                                <th class="text-nowrap w100" >Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Guillermo Alejandro Bustamente Del Castillo</td>
+                                <td>Gestión Financiera</td>
+                                <td>0962885835</td>
+                                <td>
+                                    <a (click)="editar('12234')">
+                                        <i class="fa fa-pencil text-danger cursor"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card-header>
+            <mat-card-actions align="end">
+                <button mat-button>Siguiente</button>
+                <button mat-button>Anterior</button>
+            </mat-card-actions>
+          </mat-card>          
+    </div>
+</div>

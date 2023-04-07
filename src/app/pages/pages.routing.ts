@@ -10,6 +10,8 @@ import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { AccountSettingComponent } from "./account-setting/account-setting.component";
 import { PromesasComponent } from "./promesas/promesas.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
+import { ConsultaUsuarioComponent } from "./configuraciones/usuarios/consulta-usuario/consulta-usuario.component";
+import { NuevoUsuarioComponent } from "./configuraciones/usuarios/nuevo-usuario/nuevo-usuario.component";
 
 const routes: Routes =[
     { 
@@ -24,6 +26,10 @@ const routes: Routes =[
             { path:'progresbar', component: ProgressBarComponent, data: { titulo: 'Barra de Progreso', modulo:'ambacar' } },
             { path:'promesas', component: PromesasComponent, data: { titulo: 'Promesas', modulo:'ambacar' } },
             { path:'rxjs', component: RxjsComponent, data: { titulo: 'RxJs', modulo:'ambacar' } },
+
+            { path:'00Usuarios.aspx', component: ConsultaUsuarioComponent, data:{ titulo: 'Consulta Usuarios', modulo:'configuraciones'}},            
+            { path:'editarUsuario/:id', component: NuevoUsuarioComponent, data:{ titulo: 'Actualizar Usuario', modulo:'configuraciones'}},
+            { path:'nuevoUsuario', component: NuevoUsuarioComponent, data:{ titulo: 'Crear Usuario', modulo:'configuraciones'}},
         ]
     },
 ];
