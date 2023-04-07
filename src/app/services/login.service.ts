@@ -39,7 +39,10 @@ export class LoginService {
     
   }
 
-  recuperarMenu():Observable<Menu>{
+  recuperarMenu(login: Login):Observable<Menu>{
+    sessionStorage.setItem('token', login.data.token);
+    sessionStorage.setItem('usuario', login.data.usuario);
+    sessionStorage.setItem('idRol', String(login.data.idRol));
     const usuario = sessionStorage.getItem('usuario') || '';
     const idRol = sessionStorage.getItem('idRol') || '';    
     const body = {usuario, idRol};
@@ -49,6 +52,9 @@ export class LoginService {
 
   logout(){
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('usuario');
+    sessionStorage.removeItem('idRol');
+    sessionStorage.removeItem('menu');
     this.router.navigateByUrl('/login')
   }
 }

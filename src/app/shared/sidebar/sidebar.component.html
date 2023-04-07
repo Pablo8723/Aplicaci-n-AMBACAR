@@ -7,13 +7,13 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="user-profile"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="../assets/images/users/profile.png" alt="user" /><span class="hide-menu">Steave Jobs </span></a>
+                <li class="user-profile"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="../assets/images/users/profile.png" alt="user" /><span class="hide-menu">{{nombreUsuario}} </span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="javascript:void()">My Profile </a></li>
                         <li><a href="javascript:void()">My Balance</a></li>
                         <li><a href="javascript:void()">Inbox</a></li>
                         <li><a routerLink="account">Account Setting</a></li>
-                        <li><a (click)="logout()" style="cursor: pointer;">Logout</a></li>
+                        <li><a (click)="logout()">Logout</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
@@ -21,7 +21,7 @@
                 <li *ngFor="let item of menuItems"> 
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                         <i class="{{item.icono}}"></i>
-                        <span class="hide-menu">{{item.nombre | titlecase}} 
+                        <span class="hide-menu"> {{ item.nombre | slice:0:15 | titlecase }}{{ (item.nombre.length > 15) ? '...' : '' }}
                             <span class="label label-rouded label-themecolor pull-right">{{item.menuHijos?.length}}</span>
                         </span>
                     </a>

@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 import { Login } from 'src/app/interfaces/login.interfces';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
+import { switchMap } from 'rxjs';
+import { MenuHijo } from 'src/app/interfaces/menuHijo.interfaces';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
 /* *********************************** ------------------ ******************************************* */
 
   public cargando: boolean = false;
-  public acceso!:Login;
+  public acceso!:MenuHijo[];
 
 
 /* *********************************** COSTRUCTOR Y CICLO DE VIDA *********************************** */
@@ -53,13 +55,14 @@ export class LoginComponent implements OnInit {
       const user = this.loginForm.get('usuario')?.value || "";
       const pass = this.loginForm.get('password')?.value || "";
       this.loginService.login(user, pass)
+        .pipe(
+          switchMap( login => this.loginService.recuperarMenu(login))
+        )
         .subscribe( (resp) => {
-          this.acceso = resp;
+          sessionStorage.setItem('menu', JSON.stringify(resp.data)); 
           this.cargando = false;
           console.log(resp);
-          sessionStorage.setItem('token', this.acceso.data.token);
-          sessionStorage.setItem('usuario', this.acceso.data.usuario);
-          sessionStorage.setItem('idRol', String(this.acceso.data.idRol));
+          
           if(this.loginForm.get('recuerdame')?.value){
             localStorage.setItem('recuerdame','true');
             localStorage.setItem('usuario', user);

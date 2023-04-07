@@ -20,7 +20,7 @@ const routes: Routes =[
             { path:'account', component: AccountSettingComponent, data: { titulo: 'Configuración', modulo:'Usuario' } },
 
             { path:'dashboard', component: DashboardComponent, data: { titulo: 'DashBoard', modulo:'ambacar' } },
-            { path:'graficas', component: GraficasComponent, data: { titulo: 'Graficas', modulo:'ambacar' } },
+            { path:'Menu.aspx', component: GraficasComponent, data: { titulo: 'Graficas', modulo:'ambacar' } },
             { path:'progresbar', component: ProgressBarComponent, data: { titulo: 'Barra de Progreso', modulo:'ambacar' } },
             { path:'promesas', component: PromesasComponent, data: { titulo: 'Promesas', modulo:'ambacar' } },
             { path:'rxjs', component: RxjsComponent, data: { titulo: 'RxJs', modulo:'ambacar' } },
