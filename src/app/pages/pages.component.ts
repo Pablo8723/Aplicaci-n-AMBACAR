@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SetingsService } from '../services/setings.service';
+import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
 
 
 declare function customInit():any;
@@ -19,5 +21,6 @@ export class PagesComponent implements OnInit {
   ngOnInit(): void {
     customInit();
   }
+  
 
 }

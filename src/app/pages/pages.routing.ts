@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
 
+import { AuthGuard } from "../guards/auth.guard";
 
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { GraficasComponent } from "./graficas/graficas.component";
@@ -14,6 +15,7 @@ const routes: Routes =[
     { 
         path:'ambacar', 
         component:PagesComponent,
+        canActivate: [ AuthGuard ],
         children:[
             { path:'account', component: AccountSettingComponent, data: { titulo: 'Configuración', modulo:'Usuario' } },
 
