@@ -1,0 +1,57 @@
+<div *ngIf="cargando">
+    <app-cargando></app-cargando>
+
+</div>
+
+<div class="row animated fadeIn fast" *ngIf="!cargando">
+    <div class="col">
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-success anchoTotal mb-3" (click)="exportToExcel()">Exportar EXCEL</button>
+            </div>
+        </div>
+        <mat-card>
+            <mat-card-header>
+                <div class="table-responsive text-center">
+                    <table class="table table-bordered" id="ventasAnuales">
+                        <thead>
+                            <tr>
+                                <th class="w120">Codigo Modelo</th>
+                                <th class="w120">Modelo</th>
+                                <th class="w120">Marca</th>
+                                <th class="w120">Linea</th>
+                                <th class="w120">Sub-Division</th>
+                                <th class="w120">Cantidad</th>
+                                <th class="w120">Presupuesto</th>
+                                <th class="w120">Cumplimiento</th>
+                                <th class="w120">Comentario</th>
+                                <th class="w120">Ambacar</th>
+                                <th class="w120">Exonerados</th>
+                                <th class="w120">Ciauto</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of porModelo">
+                                <td>{{item.codModelo}}</td>
+                                <td>{{item.modelo}}</td>
+                                <td>{{item.marca}}</td>
+                                <td>{{item.linea}}</td>
+                                <td>{{item.subDivision}}</td>
+                                <td>{{item.cantidad}}</td>
+                                <td>{{item.presupuesto}}</td>
+                                <td>{{item.cumplimiento}}</td>
+                                <td>{{item.comentario}}</td>
+                                <td>{{item.ambacar}}</td>
+                                <td>{{item.exonerados}}</td>
+                                <td>{{item.ciauto}}</td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card-header>
+            
+        </mat-card>  
+    </div>
+</div>

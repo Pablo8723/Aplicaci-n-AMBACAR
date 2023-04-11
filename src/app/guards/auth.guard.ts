@@ -18,7 +18,6 @@ export class AuthGuard implements CanActivate {
 
       if(sessionStorage.getItem('token')){
         const decode = jwt_decode(sessionStorage.getItem('token') || '');
-        console.log(decode);
         return true;        
       }else{
         this.router.navigateByUrl('/login');

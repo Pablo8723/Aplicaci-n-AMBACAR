@@ -12,6 +12,7 @@ import { PromesasComponent } from "./promesas/promesas.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
 import { ConsultaUsuarioComponent } from "./configuraciones/usuarios/consulta-usuario/consulta-usuario.component";
 import { NuevoUsuarioComponent } from "./configuraciones/usuarios/nuevo-usuario/nuevo-usuario.component";
+import { VentaAnualComponent } from "./configuraciones/venta-anual/venta-anual.component";
 
 const routes: Routes =[
     { 
@@ -30,6 +31,9 @@ const routes: Routes =[
             { path:'00Usuarios.aspx', component: ConsultaUsuarioComponent, data:{ titulo: 'Consulta Usuarios', modulo:'configuraciones'}},            
             { path:'editarUsuario/:id', component: NuevoUsuarioComponent, data:{ titulo: 'Actualizar Usuario', modulo:'configuraciones'}},
             { path:'nuevoUsuario', component: NuevoUsuarioComponent, data:{ titulo: 'Crear Usuario', modulo:'configuraciones'}},
+            
+            
+            { path:'ResumenMovilizacionesTablero.aspx', component: VentaAnualComponent, data:{ titulo: 'Venta Anual', modulo:'reportes'}},
         ]
     },
 ];

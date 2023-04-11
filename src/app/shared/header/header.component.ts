@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
 
   lecturaJWT(){
     const decode:any = jwt_decode(sessionStorage.getItem('token') || '');
-    console.log(decode);
     
     this.nombre = decode.name;
 

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { DateAdapter } from '@angular/material/core';
+
+import { ErrorStateMatcher } from '@angular/material/core';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nuevo-usuario',
@@ -16,11 +21,15 @@ export class NuevoUsuarioComponent implements OnInit {
 /* *********************************** ------------------ ******************************************* */
 
   cargando: boolean = false;
-
+  fechaMaxima: Date = new Date();
+  matcher = new ErrorStateMatcher();
 /* *********************************** COSTRUCTOR Y CICLO DE VIDA *********************************** */
 /* *********************************** -------------------------- *********************************** */
 
-  constructor( private fb:FormBuilder ) { }
+  constructor( private fb:FormBuilder,
+                private dateAdaptar: DateAdapter<Date>) {
+                  this.dateAdaptar.setLocale('en-GB')//dd/mm/yyyy
+                }
 
   ngOnInit(): void {
   }
@@ -44,5 +53,17 @@ export class NuevoUsuarioComponent implements OnInit {
 /* *********************************** FUNCIONES VARIAS ********************************************* */
 /* *********************************** ---------------- ********************************************* */
   
+
+  guardar(){
+    if(this.usuarioForm.valid){
+      console.log(this.usuarioForm.value);
+    }else{
+      Swal.fire({
+        icon:'error',
+        title: 'Tarea Suspendida',
+        text:'Faltan campos por completar!!!'
+      });
+    }
+  }
 
 }
