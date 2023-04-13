@@ -19,6 +19,7 @@ import { NuevaNinieraComponent } from './configuraciones/niniera/nueva-niniera/n
 import { ConsultaNinieraComponent } from './configuraciones/niniera/consulta-niniera/consulta-niniera.component';
 import { CargandoComponent } from './components/cargando/cargando.component';
 import { VentaAnualComponent } from './configuraciones/venta-anual/venta-anual.component';
+import { PorAgenciaComponent } from './configuraciones/por-agencia/por-agencia.component';
 
 
 
@@ -38,7 +39,8 @@ import { VentaAnualComponent } from './configuraciones/venta-anual/venta-anual.c
     NuevaNinieraComponent,
     ConsultaNinieraComponent,
     CargandoComponent,
-    VentaAnualComponent
+    VentaAnualComponent,
+    PorAgenciaComponent
   ],
   imports: [
     CommonModule,

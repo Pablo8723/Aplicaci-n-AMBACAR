@@ -1,0 +1,127 @@
+<div *ngIf="cargando">
+    <app-cargando></app-cargando>
+
+</div>
+
+<div class="row animated fadeIn fast" *ngIf="!cargando">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-12 ">
+                <mat-form-field class="anchoTotal">
+                    <mat-label>Filter</mat-label>
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Ambacar" #input>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form autocomplete="off"
+                        [formGroup]="agenciasForm"></form>
+                <div class="mat-elevation-z8 text-center">
+                <table class="anchoTotal" mat-table [dataSource]="dataSource" matSort>
+                
+                    <!-- AGENCIA Column -->
+                    <ng-container matColumnDef="agencia">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> AGENCIA </th>
+                    <td mat-cell *matCellDef="let row"> 
+                        <input type="text" [(ngModel)]="row.agencia">
+                         </td>
+                    </ng-container>
+                
+                    <!-- AMBACAR Column -->
+                    <ng-container matColumnDef="ambacar">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> AMBACAR </th>
+                    <td mat-cell *matCellDef="let row"> 
+                        <input class="w75" type="text" [(ngModel)]="row.ambacar" (keyup)="validar(row)">
+                    </td>
+                    </ng-container>
+                
+                    <!-- CIAUTO Column -->
+                    <ng-container matColumnDef="ciauto">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CIAUTO </th>
+                    <td mat-cell *matCellDef="let row"> {{row.ciauto}} </td>
+                    </ng-container>
+                
+                    <!-- CODAGENCIA Column -->
+                    <ng-container matColumnDef="codAgencia">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CODAGENCIA </th>
+                    <td mat-cell *matCellDef="let row"> {{row.codAgencia}} </td>
+                    </ng-container>
+    
+                    <!-- COMENTARIO Column -->
+                    <ng-container matColumnDef="comentario">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> COMENTARIO </th>
+                    <td mat-cell *matCellDef="let row"> {{row.comentario}} </td>
+                    </ng-container>
+    
+                    <!-- CUMPLIMIENTO Column -->
+                    <ng-container matColumnDef="cumplimiento">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> CUMPLIMIENTO </th>
+                    <td mat-cell *matCellDef="let row"> {{row.cumplimiento}} </td>
+                    </ng-container>
+    
+                    <!-- EXONERADO Column -->
+                    <ng-container matColumnDef="exonerados" >
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> EXONERADO </th>
+                    <td mat-cell *matCellDef="let row"> 
+                        <input class="w75" type="text" [(ngModel)]="row.exonerados" (keyup)="validar(row)">
+                    </td>
+                    </ng-container>
+    
+                    <!-- MES2 Column -->
+                    <ng-container matColumnDef="mes2">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> MES2 </th>
+                    <td mat-cell *matCellDef="let row">{{row.mes2}}</td>
+                    </ng-container>
+    
+                    <!-- POCISION Column -->
+                    <ng-container matColumnDef="posicion">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> POCISION </th>
+                    <td mat-cell *matCellDef="let row"> {{row.posicion}} </td>
+                    </ng-container>
+    
+                    <!-- PRESUPUESTO Column -->
+                    <ng-container matColumnDef="presupuesto">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> PRESUPUESTO </th>
+                    <td mat-cell *matCellDef="let row"> {{row.presupuesto}} </td>
+                    </ng-container>
+    
+                    <!-- ZONA Column -->
+                    <ng-container matColumnDef="zona">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ZONA </th>
+                    <td mat-cell *matCellDef="let row"> {{row.zona}} </td>
+                    </ng-container>
+    
+                    <!-- ZONAAUX Column -->
+                    <ng-container matColumnDef="zonaAux">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ZONAAUX </th>
+                    <td mat-cell *matCellDef="let row"> {{row.zonaAux}} </td>
+                    </ng-container>
+
+                    <!-- Botones -->
+                    <ng-container matColumnDef="acciones">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> ACCIONES </th>
+                        <td mat-cell *matCellDef="let row"> 
+                            <a (click)="guardar(row)"><i class="fa fa-save"></i></a>
+                        </td>
+                    </ng-container>
+                    
+                    
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                    class="example-element-row"></tr>
+                
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                    </tr>
+                
+                </table>
+                
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

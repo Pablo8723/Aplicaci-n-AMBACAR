@@ -13,6 +13,7 @@ import { RxjsComponent } from "./rxjs/rxjs.component";
 import { ConsultaUsuarioComponent } from "./configuraciones/usuarios/consulta-usuario/consulta-usuario.component";
 import { NuevoUsuarioComponent } from "./configuraciones/usuarios/nuevo-usuario/nuevo-usuario.component";
 import { VentaAnualComponent } from "./configuraciones/venta-anual/venta-anual.component";
+import { PorAgenciaComponent } from "./configuraciones/por-agencia/por-agencia.component";
 
 const routes: Routes =[
     { 
@@ -34,6 +35,7 @@ const routes: Routes =[
             
             
             { path:'ResumenMovilizacionesTablero.aspx', component: VentaAnualComponent, data:{ titulo: 'Venta Anual', modulo:'reportes'}},
+            { path:'PDIEstados.aspx', component: PorAgenciaComponent, data:{ titulo: 'Por Agencia', modulo:'reportes'}},
         ]
     },
 ];
