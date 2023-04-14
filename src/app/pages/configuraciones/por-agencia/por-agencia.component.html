@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-12">
                 <form autocomplete="off"
-                        [formGroup]="agenciasForm"></form>
+                        ></form>
                 <div class="mat-elevation-z8 text-center">
                 <table class="anchoTotal" mat-table [dataSource]="dataSource" matSort>
                 
@@ -25,7 +25,7 @@
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> AGENCIA </th>
                     <td mat-cell *matCellDef="let row"> 
                         <input type="text" [(ngModel)]="row.agencia">
-                         </td>
+                    </td>
                     </ng-container>
                 
                     <!-- AMBACAR Column -->

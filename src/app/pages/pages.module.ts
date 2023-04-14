@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
+import { NgChartsModule } from 'ng2-charts';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PagesnotfoundComponent } from './pagesnotfound/pagesnotfound.component';
 import { GraficasComponent } from './graficas/graficas.component';
@@ -20,11 +20,12 @@ import { ConsultaNinieraComponent } from './configuraciones/niniera/consulta-nin
 import { CargandoComponent } from './components/cargando/cargando.component';
 import { VentaAnualComponent } from './configuraciones/venta-anual/venta-anual.component';
 import { PorAgenciaComponent } from './configuraciones/por-agencia/por-agencia.component';
+import { GraficosComponent } from './components/graficos/graficos.component';
 
 
 
 @NgModule({
-  declarations: [
+  declarations: [    
     GraficasComponent,
     PagesnotfoundComponent,
     DashboardComponent,
@@ -40,9 +41,11 @@ import { PorAgenciaComponent } from './configuraciones/por-agencia/por-agencia.c
     ConsultaNinieraComponent,
     CargandoComponent,
     VentaAnualComponent,
-    PorAgenciaComponent
+    PorAgenciaComponent,
+    GraficosComponent
   ],
   imports: [
+    NgChartsModule,
     CommonModule,
     FormsModule,
     MaterialModule,

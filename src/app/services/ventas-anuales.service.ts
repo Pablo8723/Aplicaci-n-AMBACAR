@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Jwt2 } from '../interfaces/jwt2.interfaces';
-import { VentasAnuales } from '../interfaces/ventasAnuales.interfaces';
+import { PorAgencia, VentasAnuales } from '../interfaces/ventasAnuales.interfaces';
+
+import { Usuario } from '../interfaces/usuario.class';
 
 
 let url: string = environment.url;
@@ -46,5 +48,28 @@ export class VentasAnualesService {
     })
   }
 
+
+
+  modificarPorAgencia( agencia: PorAgencia):Observable<PorAgencia>{
+    return this.http.put<PorAgencia>(`${url}/actualizar`, agencia, this.header);
+  }
+
+  cargarUsuario( id: string ):Observable<Usuario>{
+    return this.http.get<Usuario>(`${url}/algo/${id}`, this.header);
+  }
+
+
+  getUsuarios( ){
+    return this.http.get<{total: number, usuarios:Usuario[]}>(`${url}/algo`, this.header)
+      .pipe(
+        map( resp => {
+          const usuarios = resp.usuarios.map( user => new Usuario(user.nombre, user.apellido, user.email, user.direccion, user.identificacion, user.fechaIngreso));
+          return{
+            total: resp.total,
+            usuarios
+          }
+        })
+      )
+  }
 
 }

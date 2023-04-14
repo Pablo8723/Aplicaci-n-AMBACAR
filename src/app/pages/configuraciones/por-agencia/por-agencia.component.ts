@@ -54,13 +54,6 @@ export class PorAgenciaComponent implements OnInit, AfterViewInit {
 /* *********************************** FORMULARIOS DEL FORMULARIO *********************************** */
 /* *********************************** -------------------------- *********************************** */
 
-  agenciasForm = this.fb.group({
-    agencia   : [, [Validators.required]],
-    ambacar   : ['', [Validators.required]],
-    exonerados: ['', [Validators.required]],
-    mes2      : ['', [Validators.required]],
-  })
-
 
 /* *********************************** FUNCIONES VARIAS ********************************************* */
 /* *********************************** ---------------- ********************************************* */
@@ -85,11 +78,24 @@ export class PorAgenciaComponent implements OnInit, AfterViewInit {
       })
   }
 
-  guardar( agencia: PorAgencia){
-    console.log(agencia);
+  guardar( agencia: PorAgencia ){
+    this.ventasServices.modificarPorAgencia(agencia)
+      .subscribe( agencia => {
+        Swal.fire({
+          icon:'success',
+          title:'Trabajo completo!!!',
+          text: `Los valor de vehiculos vendidos de la agencia ${agencia.agencia} fue actualizado con exito`
+        })
+      }, (err) => {
+        Swal.fire({
+          icon:'error',
+          title:'Trabajo incompleto!!!',
+          text: `Los valor de vehiculos vendidos de la agencia ${agencia.agencia} no fueron actualizados.`
+        })
+      })
   }
 
-  validar( agencia:PorAgencia ){
+  validar( agencia: PorAgencia ){
     let suma:number = Number(agencia.ambacar) + Number(agencia.exonerados);
     agencia.mes2 = suma;
   }
